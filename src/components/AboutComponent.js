@@ -12,15 +12,15 @@ import { Link } from "react-router-dom";
 function About(props) {
   const leaders = props.leaders.map((leader) => {
     return (
-      <div className="col-12 m-1 mb-5 ">
-        <RenderLeader leader={leader} />
+      <div key={leader.id} className="col-12 m-1 mb-5 ">
+        <RenderLeader  leader={leader} />
       </div>
     );
   });
 
   function RenderLeader({ leader }) {
     return (
-      <Media tag="li">
+      <Media  tag="li">
         <Media left>
           <img className="mr-3" src={leader.image} alt={leader.name} />
         </Media>
